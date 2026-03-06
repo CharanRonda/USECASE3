@@ -3,21 +3,22 @@
 
 <head>
 
-<title>Evaluation Input</title>
+<title>Insurance Evaluation</title>
 
 <style>
 
 body{
 margin:0;
 font-family:Segoe UI;
+color:white;
 }
 
 .video-bg{
 position:fixed;
 min-width:100%;
 min-height:100%;
-z-index:-1;
 object-fit:cover;
+z-index:-1;
 }
 
 .container{
@@ -32,35 +33,57 @@ align-items:center;
 width:420px;
 padding:40px;
 
-background:rgba(255,255,255,0.1);
+background:rgba(0,0,0,0.55);
+
+border-radius:15px;
+
 backdrop-filter:blur(12px);
 
-border-radius:12px;
-color:white;
-box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+label{
+display:block;
+margin-top:15px;
 }
 
 input{
+
 width:100%;
 padding:12px;
-margin-bottom:15px;
-border:none;
+margin-top:6px;
+
 border-radius:6px;
+border:none;
+
 }
 
 button{
+
+margin-top:20px;
 width:100%;
 padding:14px;
+
 border:none;
+
 background:#00c6ff;
+
+border-radius:8px;
 color:white;
 font-size:16px;
-border-radius:8px;
 cursor:pointer;
+
 }
 
-button:hover{
-background:#0072ff;
+.nav-buttons{
+
+display:flex;
+gap:10px;
+margin-top:10px;
+
+}
+
+.nav-buttons button{
+background:#444;
 }
 
 </style>
@@ -77,26 +100,39 @@ background:#0072ff;
 
 <div class="form-box">
 
-<h2>Customer Information</h2>
+<h2>Insurance Quote Evaluation</h2>
 
 <form action="/predict" method="POST">
 
-<input type="number" name="premium" placeholder="Quoted Premium" required>
+<label>Quoted Premium ($)</label>
+<input type="number" name="premium" placeholder="$ 1200">
 
-<input type="number" name="accidents" placeholder="Previous Accidents" required>
+<label>Previous Accidents</label>
+<input type="number" name="accidents">
 
-<input type="number" name="age" placeholder="Driver Age">
+<label>Driver Age</label>
+<input type="number" name="age">
 
-<input type="number" name="miles" placeholder="Annual Miles">
+<label>Annual Miles (miles)</label>
+<input type="number" name="miles" placeholder="12000 miles">
 
 <button type="submit">EVALUATE</button>
 
 </form>
+
+<div class="nav-buttons">
+
+<a href="/">
+<button>Home</button>
+</a>
+
+<button onclick="history.back()">Go Back</button>
+
+</div>
 
 </div>
 
 </div>
 
 </body>
-
 </html>
