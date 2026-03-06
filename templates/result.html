@@ -3,43 +3,68 @@
 
 <head>
 
-<title>Evaluation Result</title>
+<title>AI Decision Result</title>
 
 <style>
 
 body{
-font-family:Segoe UI;
 margin:0;
-background:url("/static/bg3.jpg");
-background-size:cover;
+font-family:Segoe UI;
 color:white;
 }
 
+.video-bg{
+position:fixed;
+min-width:100%;
+min-height:100%;
+z-index:-1;
+object-fit:cover;
+}
+
 .container{
-width:80%;
-margin:auto;
-margin-top:100px;
+padding:80px;
+text-align:center;
 }
 
 .grid{
+
 display:grid;
 grid-template-columns:repeat(4,1fr);
-gap:20px;
+gap:30px;
+margin-top:50px;
+
 }
 
 .card{
-background:#1f2c3a;
-padding:25px;
-border-radius:10px;
-text-align:center;
+
+padding:30px;
+
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+
+border-radius:12px;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
+
+}
+
+h1{
+font-size:40px;
 }
 
 button{
 margin-top:40px;
-padding:15px 30px;
+padding:15px 40px;
 background:#00c6ff;
 border:none;
 border-radius:8px;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0072ff;
 }
 
 </style>
@@ -48,9 +73,13 @@ border-radius:8px;
 
 <body>
 
+<video autoplay muted loop class="video-bg">
+<source src="/static/bg.mp4" type="video/mp4">
+</video>
+
 <div class="container">
 
-<h1>Agent Evaluation Result</h1>
+<h1>Agent Evaluation Pipeline</h1>
 
 <div class="grid">
 
@@ -87,4 +116,5 @@ border-radius:8px;
 </div>
 
 </body>
+
 </html>
