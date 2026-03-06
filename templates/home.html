@@ -2,38 +2,63 @@
 <html>
 
 <head>
-<title>AI Insurance Evaluation</title>
+
+<title>Autonomous Quote AI</title>
 
 <style>
 
-body{
+*{
 margin:0;
+padding:0;
 font-family:Segoe UI;
-background:url("/static/bg1.jpg");
-background-size:cover;
-color:white;
-text-align:center;
 }
 
-.container{
-margin-top:200px;
+.video-bg{
+position:fixed;
+right:0;
+bottom:0;
+min-width:100%;
+min-height:100%;
+z-index:-1;
+object-fit:cover;
+}
+
+.overlay{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+background:rgba(0,0,0,0.4);
+}
+
+.card{
+padding:60px;
+border-radius:15px;
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(12px);
+box-shadow:0 8px 40px rgba(0,0,0,0.6);
 }
 
 h1{
-font-size:55px;
+font-size:50px;
+margin-bottom:20px;
 }
 
 button{
+
 padding:15px 40px;
 font-size:18px;
-background:#00c6ff;
 border:none;
-border-radius:8px;
+border-radius:10px;
+background:#00c6ff;
+color:white;
 cursor:pointer;
 }
 
 button:hover{
-background:#0095ff;
+background:#0072ff;
 }
 
 </style>
@@ -42,11 +67,19 @@ background:#0095ff;
 
 <body>
 
-<div class="container">
+<video autoplay muted loop class="video-bg">
+<source src="/static/bg.mp4" type="video/mp4">
+</video>
+
+<div class="overlay">
+
+<div class="card">
 
 <h1>Autonomous Quote Agent System</h1>
 
-<p>AI Powered Insurance Evaluation Pipeline</p>
+<p>AI Powered Insurance Decision Engine</p>
+
+<br>
 
 <a href="/input">
 <button>START EVALUATION</button>
@@ -54,5 +87,8 @@ background:#0095ff;
 
 </div>
 
+</div>
+
 </body>
+
 </html>
