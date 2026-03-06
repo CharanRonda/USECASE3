@@ -5,20 +5,23 @@
 
 <title>Autonomous Quote Agent</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
 
 *{
 margin:0;
 padding:0;
-font-family:Segoe UI;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
 .video-bg{
 position:fixed;
 min-width:100%;
 min-height:100%;
-z-index:-1;
 object-fit:cover;
+z-index:-1;
 }
 
 .overlay{
@@ -32,56 +35,68 @@ color:white;
 }
 
 .hero{
+
 max-width:900px;
 padding:60px;
 
-background:rgba(255,255,255,0.08);
+background:rgba(0,0,0,0.45);
+
 border-radius:20px;
 
-backdrop-filter:blur(14px);
+backdrop-filter:blur(10px);
 
-box-shadow:0 20px 60px rgba(0,0,0,0.6);
 }
 
 h1{
-font-size:55px;
+font-size:50px;
 margin-bottom:20px;
 }
 
 p{
 font-size:18px;
 line-height:1.6;
-margin-bottom:20px;
 }
 
 .features{
 
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:15px;
 margin-top:25px;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:15px;
 
 }
 
 .feature{
+
 background:rgba(255,255,255,0.1);
+
 padding:15px;
+
 border-radius:8px;
+
 }
 
 button{
-margin-top:30px;
-padding:16px 45px;
-font-size:18px;
-border:none;
-border-radius:10px;
-background:#00c6ff;
-color:white;
-cursor:pointer;
-}
 
-button:hover{
-background:#0072ff;
+margin-top:30px;
+
+padding:16px 40px;
+
+border:none;
+
+border-radius:8px;
+
+background:linear-gradient(90deg,#00c6ff,#0072ff);
+
+color:white;
+
+font-size:16px;
+
+cursor:pointer;
+
 }
 
 </style>
@@ -101,14 +116,14 @@ background:#0072ff;
 <h1>Autonomous Quote Agent System</h1>
 
 <p>
-An AI-powered multi-agent decision system designed to evaluate insurance quotes
-using specialized intelligent agents that analyze risk, predict conversion probability,
-optimize premium recommendations, and route underwriting decisions automatically.
+An AI-powered multi-agent system that evaluates insurance quotes using
+risk analysis, conversion prediction, premium advisory, and automated
+decision routing.
 </p>
 
 <div class="features">
 
-<div class="feature">🧠 Risk Profiling Agent</div>
+<div class="feature">🧠 Risk Profiling</div>
 <div class="feature">📊 Conversion Prediction</div>
 <div class="feature">💰 Premium Optimization</div>
 <div class="feature">🚦 Decision Routing</div>
@@ -116,7 +131,9 @@ optimize premium recommendations, and route underwriting decisions automatically
 </div>
 
 <a href="/input">
-<button>START EVALUATION</button>
+
+<button>Start Evaluation</button>
+
 </a>
 
 </div>
@@ -124,4 +141,5 @@ optimize premium recommendations, and route underwriting decisions automatically
 </div>
 
 </body>
+
 </html>
