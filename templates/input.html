@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Enter Details</title>
+
+<style>
+
+body{
+font-family:Segoe UI;
+margin:0;
+background:url("/static/bg2.jpg");
+background-size:cover;
+}
+
+.form-box{
+width:400px;
+margin:150px auto;
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+input{
+width:100%;
+padding:10px;
+margin-bottom:15px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#0072ff;
+border:none;
+color:white;
+font-size:16px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="form-box">
+
+<h2>Customer Information</h2>
+
+<form action="/predict" method="POST">
+
+<input type="number" name="premium" placeholder="Quoted Premium" required>
+
+<input type="number" name="accidents" placeholder="Previous Accidents" required>
+
+<input type="number" name="age" placeholder="Driver Age">
+
+<input type="number" name="miles" placeholder="Annual Miles">
+
+<button type="submit">EVALUATE</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
