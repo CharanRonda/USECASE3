@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Evaluation Result</title>
+
+<style>
+
+body{
+font-family:Segoe UI;
+margin:0;
+background:url("/static/bg3.jpg");
+background-size:cover;
+color:white;
+}
+
+.container{
+width:80%;
+margin:auto;
+margin-top:100px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.card{
+background:#1f2c3a;
+padding:25px;
+border-radius:10px;
+text-align:center;
+}
+
+button{
+margin-top:40px;
+padding:15px 30px;
+background:#00c6ff;
+border:none;
+border-radius:8px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Agent Evaluation Result</h1>
+
+<div class="grid">
+
+<div class="card">
+<h3>Agent 1</h3>
+<p>Risk Profiler</p>
+<p>{{risk}}</p>
+</div>
+
+<div class="card">
+<h3>Agent 2</h3>
+<p>Conversion Predictor</p>
+<p>{{conversion}}%</p>
+</div>
+
+<div class="card">
+<h3>Agent 3</h3>
+<p>Premium Advisor</p>
+<p>{{advice}}</p>
+</div>
+
+<div class="card">
+<h3>Agent 4</h3>
+<p>Decision Router</p>
+<p>{{decision}}</p>
+</div>
+
+</div>
+
+<a href="/download">
+<button>Download Result</button>
+</a>
+
+</div>
+
+</body>
+</html>
