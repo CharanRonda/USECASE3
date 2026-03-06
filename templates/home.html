@@ -3,7 +3,7 @@
 
 <head>
 
-<title>Autonomous Quote AI</title>
+<title>Autonomous Quote Agent</title>
 
 <style>
 
@@ -15,8 +15,6 @@ font-family:Segoe UI;
 
 .video-bg{
 position:fixed;
-right:0;
-bottom:0;
 min-width:100%;
 min-height:100%;
 z-index:-1;
@@ -29,26 +27,51 @@ display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
+background:rgba(0,0,0,0.55);
 color:white;
-background:rgba(0,0,0,0.4);
 }
 
-.card{
+.hero{
+max-width:900px;
 padding:60px;
-border-radius:15px;
-background:rgba(255,255,255,0.1);
-backdrop-filter:blur(12px);
-box-shadow:0 8px 40px rgba(0,0,0,0.6);
+
+background:rgba(255,255,255,0.08);
+border-radius:20px;
+
+backdrop-filter:blur(14px);
+
+box-shadow:0 20px 60px rgba(0,0,0,0.6);
 }
 
 h1{
-font-size:50px;
+font-size:55px;
 margin-bottom:20px;
 }
 
-button{
+p{
+font-size:18px;
+line-height:1.6;
+margin-bottom:20px;
+}
 
-padding:15px 40px;
+.features{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+margin-top:25px;
+
+}
+
+.feature{
+background:rgba(255,255,255,0.1);
+padding:15px;
+border-radius:8px;
+}
+
+button{
+margin-top:30px;
+padding:16px 45px;
 font-size:18px;
 border:none;
 border-radius:10px;
@@ -73,12 +96,24 @@ background:#0072ff;
 
 <div class="overlay">
 
-<div class="card">
+<div class="hero">
 
-<h1>InsurAI</h1>
-<p>AI Powered Insurance Decision Engine</p>
+<h1>Autonomous Quote Agent System</h1>
 
-<br>
+<p>
+An AI-powered multi-agent decision system designed to evaluate insurance quotes
+using specialized intelligent agents that analyze risk, predict conversion probability,
+optimize premium recommendations, and route underwriting decisions automatically.
+</p>
+
+<div class="features">
+
+<div class="feature">🧠 Risk Profiling Agent</div>
+<div class="feature">📊 Conversion Prediction</div>
+<div class="feature">💰 Premium Optimization</div>
+<div class="feature">🚦 Decision Routing</div>
+
+</div>
 
 <a href="/input">
 <button>START EVALUATION</button>
@@ -89,5 +124,4 @@ background:#0072ff;
 </div>
 
 </body>
-
 </html>
