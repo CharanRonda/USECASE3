@@ -5,23 +5,18 @@ from reportlab.pdfgen import canvas
 
 app = Flask(__name__)
 
-# store results globally for PDF generation
 latest_result = {}
-
 
 @app.route("/")
 def home():
     return render_template("home.html")
 
-
 @app.route("/input")
 def input_page():
     return render_template("input.html")
 
-
 @app.route("/predict", methods=["POST"])
 def predict():
-
     premium = int(request.form["premium"])
     accidents = int(request.form["accidents"])
     age = int(request.form["age"])
@@ -33,15 +28,15 @@ def predict():
     decision = agents.decision_router(risk, conversion)
 
     global latest_result
-
     latest_result = {
+        "premium": premium,
+        "accidents": accidents,
+        "age": age,
+        "miles": miles,
         "risk": risk,
         "conversion": conversion,
         "advice": advice,
-        "decision": decision,
-        "premium": premium,
-        "age": age,
-        "miles": miles
+        "decision": decision
     }
 
     return render_template(
@@ -52,36 +47,24 @@ def predict():
         decision=decision
     )
 
-
 @app.route("/download")
 def download():
-
     file = "report.pdf"
-
     c = canvas.Canvas(file)
 
-    c.setFont("Helvetica-Bold",20)
-    c.drawString(100,780,"AI Insurance Evaluation Report")
+    c.setFont("Helvetica-Bold", 20)
+    c.drawString(100, 780, "AI Insurance Evaluation Report")
 
-    c.setFont("Helvetica",12)
-
+    c.setFont("Helvetica", 12)
     y = 720
-
-    for key,value in latest_result.items():
-
-        text = f"{key.upper()} : {value}"
-
-        c.drawString(100,y,text)
-
-        y -= 30
+    for k, v in latest_result.items():
+        c.drawString(100, y, f"{k.upper()} : {v}")
+        y -= 25
 
     c.save()
-
     return send_file(file, as_attachment=True)
 
-
 # IMPORTANT FOR RENDER
-
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT",10000))
+    port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
